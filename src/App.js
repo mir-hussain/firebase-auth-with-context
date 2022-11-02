@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { GoogleAuthProvider } from "firebase/auth";
+import { useContext } from "react";
+import { AUTH_CONTEXT } from "./context/AuthProvider";
 
-function App() {
+const App = () => {
+  const { handleOneClickAuth } = useContext(AUTH_CONTEXT);
+  const google = new GoogleAuthProvider();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={() => handleOneClickAuth(google)}>Google login</button>
     </div>
   );
-}
-
+};
 export default App;
