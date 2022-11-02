@@ -1,4 +1,4 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, signInWithPopup } from "firebase/auth";
 import React, { createContext } from "react";
 import app from "../firebase/firebase.config";
 
